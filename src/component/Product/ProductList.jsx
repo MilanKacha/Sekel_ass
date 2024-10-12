@@ -27,14 +27,14 @@ const ProductList = () => {
   return (
     <>
       <div className={styles.productList}>
-        {products.map((product, i) => (
+        {products?.map((product, i) => (
           <div className={styles.card}>
             <Link to={`/product/${product.id}`} key={product.id} style={{ textDecoration: "none" }}>
-              <img src={product.image} alt={product.title} className={styles.image} />
-              <h2 style={{ textAlign: "left", fontSize: "20px", color: "black" }}>{product.title}</h2>
-              <p style={{ textAlign: "left", fontWeight: "bold" }}>{product.price} USD</p>
+              <img src={product?.image} alt={product?.title} className={styles.image} />
+              <h2 style={{ textAlign: "left", fontSize: "20px", color: "black" }}>{product?.title}</h2>
+              <p style={{ textAlign: "left", fontWeight: "bold" }}>{product?.price} USD</p>
               <p style={{ fontSize: "15px", textAlign: "justify" }}>
-                {product.description.substring(0, 150)}...
+                {product?.description?.substring(0, 150)}...
               </p>
             </Link>
             <button className={styles.button} onClick={() => dispatch(addToCart(product))}>Add to Cart</button>

@@ -33,14 +33,14 @@ const ProductDetails = () => {
     return (
         <div className={styles.detailsContainer}>
             <div className={styles.imageContainer}>
-                <img src={product.image} alt={product.title} className={styles.image} />
+                <img src={product?.image} alt={product?.title} className={styles.image} />
             </div>
             <div className={styles.details}>
                 <h2>{product.title}</h2>
-                <p className={styles.price}>Price: {product.price} USD</p>
-                <p className={styles.category}>Category: {product.category}</p>
-                <p className={styles.rating}>Rating: {product.rating.rate} ({product.rating.count} reviews)</p>
-                <p className={styles.description}>{product.description}</p>
+                <p className={styles.price}>Price: {product?.price} USD</p>
+                <p className={styles.category}>Category: {product?.category}</p>
+                <p className={styles.rating}>Rating: {product.rating.rate} ({product?.rating.count} reviews)</p>
+                <p className={styles.description}>{product?.description}</p>
                 <button className={styles.button} onClick={() => dispatch(addToCart(product))}>Add to Cart</button>
             </div>
         </div>
